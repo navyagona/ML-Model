@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Species Predictor | AI Deployment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <h1>Iris Species Predictor</h1>
+            <p>Advanced Machine Learning in your browser</p>
+        </header>
+
+        <main>
+            <form id="prediction-form">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="sepal_length">Sepal Length (cm)</label>
+                        <input type="number" id="sepal_length" step="0.1" value="5.1" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="sepal_width">Sepal Width (cm)</label>
+                        <input type="number" id="sepal_width" step="0.1" value="3.5" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="petal_length">Petal Length (cm)</label>
+                        <input type="number" id="petal_length" step="0.1" value="1.4" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="petal_width">Petal Width (cm)</label>
+                        <input type="number" id="petal_width" step="0.1" value="0.2" required>
+                    </div>
+                </div>
+                <button type="submit" id="predict-btn">Analyze Features</button>
+            </form>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="divider"></div>
+                <h2>Prediction Result</h2>
+                <div class="prediction-card">
+                    <span id="predicted-species" class="species-name">---</span>
+                    <div class="confidence-bar-container">
+                        <div id="confidence-bar" class="confidence-bar"></div>
+                    </div>
+                    <p>Confidence: <span id="confidence-value">0%</span></p>
+                </div>
+                
+                <div class="probabilities">
+                    <h3>Probabilities</h3>
+                    <div id="probs-list"></div>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Consulting the model...</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with FastAPI & Scikit-Learn</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
